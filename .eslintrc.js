@@ -1,0 +1,86 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2022: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:import/recommended',
+    'plugin:prettier/recommended',
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier'],
+  rules: {
+    'linebreak-style': 'off',
+    'import/newline-after-import': 'off',
+    'import/first': 'off',
+    'import/no-absolute-path': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-empty-function': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: ['function-declaration', 'arrow-function'],
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.jsx'],
+      },
+    ],
+    'object-shorthand': ['error', 'always'],
+    'react/destructuring-assignment': 'off',
+    'react/no-unused-prop-types': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-child-element-spacing': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'jsx-dev-runtime': 'off',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', ['parent', 'sibling'], 'index', 'object'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        'newlines-between': 'always',
+      },
+    ],
+    'no-underscore-dangle': 'off',
+    'spaced-comment': 'off',
+    'one-var': 'off',
+    'no-undef': 'off',
+    'no-var': 'off',
+    'no-void': 'off',
+    'no-shadow': 'off',
+    'no-unused-vars': 'off',
+    'prefer-template': 'off',
+    'no-useless-concat': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'vars-on-top': 'off',
+    'no-use-before-define': 'off',
+    'import/prefer-defalut-export': 'off',
+    'prettier/prettier': [
+      'off',
+      {
+        endOfLine: 'auto',
+      },
+      {
+        usePrettierrc: true,
+      },
+    ],
+    'import/prefer-default-export': 'off',
+    'no-param-reassign': 'off',
+  },
+};
