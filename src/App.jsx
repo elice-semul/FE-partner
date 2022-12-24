@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 import appBackground from '@/assets/images/appBackground.png';
+import { Header } from '@/pages/common/sections';
 
 const Wrapper = styled.div`
   position: relative;
@@ -84,9 +85,20 @@ const OutletContainer = styled.div`
   }
 `;
 
+const headerText = [
+  {
+    pathname: '/login',
+    text: '로그인',
+  },
+  {
+    pathname: '/signup',
+    text: '회원가입',
+  },
+];
+
 export function App() {
   const location = useLocation();
-
+  const { text } = headerText.find((e) => e.pathname === location.pathname);
   return (
     <Wrapper>
       <DescContainer>
@@ -105,6 +117,7 @@ export function App() {
         </ServiceDesc>
       </DescContainer>
       <Container>
+        {text && <Header>{text}</Header>}
         <OutletContainer>
           <Outlet />
         </OutletContainer>
