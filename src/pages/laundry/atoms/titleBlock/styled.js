@@ -9,9 +9,12 @@ export const StyledTitleText = styled.h1`
   font-weight: 700;
   line-height: 40px;
 `;
-
 export const StyledSubTitleText = styled.h2`
   font-size: 24px;
   font-weight: 600;
   line-height: 40px;
+`;
+
+export const StyledTitleStrongText = styled.strong`
+  color: ${(props) => props.theme.colors.primary};
 `;
