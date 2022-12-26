@@ -6,6 +6,7 @@ export const StyledCardContainer = styled.div`
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
   min-height: 65vh;
   border-radius: 20px;
+  padding: 20px 10px;
 `;
 
 export const StyledListHeaderContainer = styled.div`

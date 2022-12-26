@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import FlexedSpan from '../atoms/flexedSpan/flexedSpan';
+import { FlexedSpan } from '@/pages/common/atoms';
 const mockTable = [
   {
     id: 1,

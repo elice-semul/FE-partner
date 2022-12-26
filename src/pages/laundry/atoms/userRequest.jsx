@@ -1,4 +1,4 @@
-import FlexedSpan from '../atoms/flexedSpan/flexedSpan';
+import { FlexedSpan } from '@/pages/common/atoms';
 
 const UserRequest = ({ requestObj }) => {
   return (

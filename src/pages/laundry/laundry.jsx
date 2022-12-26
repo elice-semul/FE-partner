@@ -1,8 +1,10 @@
-import { TitleBlock, ToggleBtnBlock, CardContainer, OrderListItem, HandleBtnBlock } from './atoms';
+import { TitleBlock, ToggleBtnBlock, CardContainer, OrderListItem } from './atoms';
+import { OrderListWidget } from './sections';
+import { StyledLaundryContainer } from './styled';
 
 const Laundry = () => {
   return (
-    <div>
+    <StyledLaundryContainer>
       <TitleBlock
         title="새물파트너님 안녕하세요."
         strongTitle="새물파트너"
@@ -11,10 +13,10 @@ const Laundry = () => {
       />
       <ToggleBtnBlock />
       <CardContainer>
-        <OrderListItem name="엘리스" date="2022-12-26" price="10,000" />
-        <HandleBtnBlock confirm cancel update />
+        <OrderListWidget />
+        <OrderListWidget />
       </CardContainer>
-    </div>
+    </StyledLaundryContainer>
   );
 };
 
