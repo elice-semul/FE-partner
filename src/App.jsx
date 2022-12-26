@@ -98,7 +98,7 @@ const headerText = [
 
 export function App() {
   const location = useLocation();
-  const { text } = headerText.find((e) => e.pathname === location.pathname);
+  const headerObj = headerText.find((e) => e.pathname === location.pathname);
   return (
     <Wrapper>
       <DescContainer>
@@ -117,7 +117,7 @@ export function App() {
         </ServiceDesc>
       </DescContainer>
       <Container>
-        {text && <Header>{text}</Header>}
+        {headerObj && <Header>{headerObj.text}</Header>}
         <OutletContainer>
           <Outlet />
         </OutletContainer>
