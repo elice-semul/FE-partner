@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 import { HandleBtnBlock, LaundryTable, UserRequest } from '../atoms';
-const DetailContainer = () => {
+const DetailContainer = ({ order, renderingStatus }) => {
   return (
     <TestContainer>
-      <UserRequest />
-      <LaundryTable />
-      <HandleBtnBlock confirm cancel update />
+      <UserRequest {...{ order }} />
+      <LaundryTable {...{ order }} />
+      <HandleBtnBlock {...{ order }} {...{ renderingStatus }} />
     </TestContainer>
   );
 };
