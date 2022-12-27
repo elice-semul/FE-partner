@@ -1,31 +1,47 @@
-import DaumPostcode from "react-daum-postcode";
+import DaumPostcode from 'react-daum-postcode';
+import styled from 'styled-components';
 
 const DaumApi = (props) => {
+  const { setDaumApi } = props;
+  const { setValue } = props;
+  const onCompletePost = (data) => {
+    setDaumApi(false);
+    setValue('roadAddr', data.address);
+    setValue('jibun', data.zonecode);
+  };
 
-    const {setAddress} = props;
-    const {setDaumApi} = props;
+  const postCodeStyle = {
+    display: 'block',
+    position: 'absolute',
+    left: '35%',
+    top: '10%',
+    width: '600px',
+    height: '600px',
+    border: '1px solid black',
+  };
 
-    const onCompletePost = (data) => {
-        setAddress(data.address);
-        setDaumApi(false);
-    };
-
-    const postCodeStyle = {
-        display: "block",
-        position: "absolute",
-        top: "20%",
-        width: "300px",
-        height: "400px",
-        padding: "3px",
-        zIndex: 100,
-    };
-
-    return (
-        <DaumPostcode
-                style={postCodeStyle}
-                onComplete={onCompletePost}
-            />
-    );
+  return (
+    <>
+      <DaumPostcode style={postCodeStyle} onComplete={onCompletePost} />
+      <StyledBtn
+        type="button"
+        onClick={() => {
+          setDaumApi(false);
+        }}
+      >
+        닫기
+      </StyledBtn>
+    </>
+  );
 };
 
+const StyledBtn = styled.button`
+  display: block;
+  position: absolute;
+  top: 7%;
+  left: 35%;
+  float: right;
+  width: 50px;
+  height: auto;
+`;
 export default DaumApi;
