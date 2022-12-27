@@ -1,6 +1,9 @@
 import { StyledHandleBtnContainer, HandleBtnType, StyledHandleBtn } from './styled';
 
 const HandleBtnBlock = ({ update, cancel, confirm }) => {
+  const handleUpdateBtnClick = () => {};
+  const handleCancelBtnClick = () => {};
+  const handleConfirmBtnClick = () => {};
   return (
     <StyledHandleBtnContainer>
       {update && <StyledHandleBtn btnType={HandleBtnType.UPDATE}>수정</StyledHandleBtn>}

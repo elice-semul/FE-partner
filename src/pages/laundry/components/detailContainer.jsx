@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import LaundryTable from './laundryTable';
-import UserRequest from './userRequest';
+import { HandleBtnBlock, LaundryTable, UserRequest } from '../atoms';
 const DetailContainer = () => {
   return (
     <TestContainer>
       <UserRequest />
       <LaundryTable />
+      <HandleBtnBlock confirm cancel update />
     </TestContainer>
   );
 };

@@ -4,6 +4,7 @@ export const StyledToggleBtnContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   gap: 10px;
+  margin-bottom: 10px;
 `;
 
 export const StyledToggleBtn = styled.button`

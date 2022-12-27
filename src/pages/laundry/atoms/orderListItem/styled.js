@@ -10,6 +10,7 @@ export const StyledListItemContainer = styled.button`
   cursor: pointer;
   align-items: center;
   text-align: left;
+  margin-bottom: 10px;
 `;
 
 export const StyledListItemText = styled.div`

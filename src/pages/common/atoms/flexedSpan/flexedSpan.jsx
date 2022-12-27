@@ -1,4 +1,4 @@
-import * as S from '@/pages/orderListItemDetail/atoms/flexedSpan/style';
+import * as S from './style';
 
 const FlexedSpan = ({ flexDirection, title, content, ...props }) => {
   return (

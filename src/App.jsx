@@ -71,7 +71,6 @@ const ServiceDesc = styled.p`
 `;
 
 const OutletContainer = styled.div`
-  height: calc(100vh - 100px);
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
