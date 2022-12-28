@@ -18,9 +18,9 @@ const Laundry = () => {
       navigate('/login');
     }
   }, []);
+
   const { laundryOrdersQuery } = useLaundryOrders();
   const { status, data: orders } = laundryOrdersQuery;
-  // console.log(orders);
   if (status !== 'success') {
     return (
       <StyledLaundryContainer>

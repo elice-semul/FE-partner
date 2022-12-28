@@ -20,10 +20,10 @@ const SignUp = () => {
         jibun,
       },
     };
-
+    mutation.mutate(postObj);
     mutation.mutate(postObj, {
       onSuccess: () => {
-        navigate('/');
+        navigate('/login');
       },
       onError: (error) => {
         // eslint-disable-next-line no-alert
