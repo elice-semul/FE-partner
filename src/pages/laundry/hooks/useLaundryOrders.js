@@ -8,7 +8,6 @@ const useLaundryOrders = () => {
   const laundryOrdersQuery = useQuery(['laundryOrders', laundryId], getAllLaundryOrdersApi, {
     enabled: !!laundryId,
   });
-
   return { laundryOrdersQuery, currentLaundryQuery };
 };
 

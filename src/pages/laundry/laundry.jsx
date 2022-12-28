@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Loading } from '../common/atoms/index';
@@ -13,11 +13,14 @@ const Laundry = () => {
   const [renderingStatus, setRenderingStatus] = useState(ORDER_STATUS.CONNECT);
   const navigate = useNavigate();
   const token = sessionStorage.getItem('Authorization');
-  if (!token) {
-    navigate('/login');
-  }
+  useEffect(() => {
+    if (!token) {
+      navigate('/login');
+    }
+  }, []);
   const { laundryOrdersQuery } = useLaundryOrders();
   const { status, data: orders } = laundryOrdersQuery;
+  // console.log(orders);
   if (status !== 'success') {
     return (
       <StyledLaundryContainer>
