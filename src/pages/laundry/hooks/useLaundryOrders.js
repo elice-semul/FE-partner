@@ -1,11 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { getAllLaundryOrdersApi } from './api';
+import { getAllLaundryOrdersApi, getCurrentLaundryApi } from './api';
 
 const useLaundryOrders = () => {
-  const laundryOrdersQuery = useQuery(['laundryOrders'], getAllLaundryOrdersApi);
+  const currentLaundryQuery = useQuery(['currentUser'], getCurrentLaundryApi);
+  const laundryId = currentLaundryQuery?.data?.id;
+  const laundryOrdersQuery = useQuery(['laundryOrders', laundryId], getAllLaundryOrdersApi, {
+    enabled: !!laundryId,
+  });
 
-  return { laundryOrdersQuery };
+  return { laundryOrdersQuery, currentLaundryQuery };
 };
 
 export default useLaundryOrders;
