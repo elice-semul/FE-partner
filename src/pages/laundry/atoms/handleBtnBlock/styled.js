@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const HandleBtnType = {
-  CONFIRM: 'confirm',
-  CANCEL: 'cancel',
+  CONFIRM: 'CONFIRM',
+  CANCEL: 'CANCEL',
   UPDATE: 'UPDATE',
 };
 

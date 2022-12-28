@@ -1,37 +1,15 @@
 import styled from 'styled-components';
 
 import { FlexedSpan } from '@/pages/common/atoms';
-const mockTable = [
-  {
-    id: 1,
-    productName: '와이셔츠, 셔츠, 교복셔츠',
-    qty: 2,
-    unitPrice: 1900,
-    price: 3800,
-  },
-  {
-    id: 2,
-    productName: '대형커튼',
-    qty: 1,
-    unitPrice: 30000,
-    price: 30000,
-  },
-  {
-    id: 3,
-    productName: '구두',
-    qty: 1,
-    unitPrice: 5000,
-    price: 5000,
-  },
-];
+import { calculateEstimatedPrice, sumTotalQuantity } from '@/utils/calculateEstimatedPrice';
 
-const LaundryTable = ({ table }) => {
-  const list = mockTable.map((value) => (
-    <tr key={value.id}>
-      <td>{value.productName}</td>
-      <td>{value.qty}</td>
-      <td>{value.unitPrice}</td>
-      <td>{value.price}</td>
+const LaundryTable = ({ order }) => {
+  const list = order.orderProducts.map((product) => (
+    <tr key={product.id}>
+      <td>{product.productName}</td>
+      <td>{product.qty}</td>
+      <td>{product.price}</td>
+      <td>{product.price * product.qty}</td>
     </tr>
   ));
   return (
@@ -49,8 +27,8 @@ const LaundryTable = ({ table }) => {
         <tbody>{list}</tbody>
       </StyledTable>
       <StyledRowFlex>
-        <FlexedSpan title="총 수량" content={5} />
-        <FlexedSpan title="총 금액" content="50000원" />
+        <FlexedSpan title="총 수량" content={sumTotalQuantity(order.orderProducts)} />
+        <FlexedSpan title="총 금액" content={calculateEstimatedPrice(order.orderProducts)} />
       </StyledRowFlex>
     </StyledFlexContainer>
   );

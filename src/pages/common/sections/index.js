@@ -1,3 +1,3 @@
 import Header from './header/header';
-
-export { Header };
+import Modal from './modal/modal';
+export { Header, Modal };
