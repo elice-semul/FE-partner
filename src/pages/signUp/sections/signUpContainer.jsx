@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import DaumApi from '../../common/sections/daumApi';
 import { StyledSignUpInput, StyledSignUpLabel } from '../atoms/signUpInput/styled';
 import SignUpSpan from '../atoms/signUpSpan/signUpSpan';
-import DaumApi from '../page/daumApi';
 import * as S from './styled';
 
 import { Flex, Container, Form } from '@/pages/common/atoms/index';
