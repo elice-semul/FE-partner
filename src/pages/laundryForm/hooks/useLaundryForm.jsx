@@ -7,7 +7,7 @@ const useLaundryForm = () => {
 
   const mutation = useMutation(['laundryForm'], API.laundryFormApi, {
     onSuccess: () => {
-      navigate('/');
+      navigate('/login');
     },
     onError: (error) => {
       // eslint-disable-next-line no-alert

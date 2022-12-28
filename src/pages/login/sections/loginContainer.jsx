@@ -35,6 +35,9 @@ const LoginContainer = () => {
           if (response.data.access_token && response.data.user.bizType === 'partner') {
             sessionStorage.setItem('Authorization', response.data.access_token);
             navigate('/');
+          } else if (response.data.user.bizType === 'BeforePartner') {
+            sessionStorage.setItem('Authorization', response.data.access_token);
+            navigate('/laundry/form');
           } else if (response.data.user.bizType !== 'partner') {
             alert('파트너 승인을 위해 관리자에게 문의해주세요.');
           } else {
