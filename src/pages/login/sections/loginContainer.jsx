@@ -32,9 +32,11 @@ const LoginContainer = () => {
           password: account.password,
         })
         .then((response) => {
-          if (response.data.access_token) {
+          if (response.data.access_token && response.data.user.bizType === 'partner') {
             sessionStorage.setItem('Authorization', response.data.access_token);
             navigate('/');
+          } else if (response.data.user.bizType !== 'partner') {
+            alert('파트너 승인을 위해 관리자에게 문의해주세요.');
           } else {
             alert('아이디 혹은 비밀번호를 확인해 주세요');
           }
