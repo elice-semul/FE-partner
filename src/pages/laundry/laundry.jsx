@@ -37,10 +37,15 @@ const Laundry = () => {
         subTitle="오늘도 꼼꼼한 세탁 부탁드려요."
         strongSubTitle="꼼꼼한 세탁"
       />
-      <ToggleBtnBlock {...{ renderingStatus }} {...{ setRenderingStatus }} />
+      <ToggleBtnBlock {...{ renderingStatus }} {...{ setRenderingStatus }} {...{ orders }} />
       <CardContainer>
         {orders
-          .filter((order) => order.status === renderingStatus)
+          .filter((order) => {
+            if (renderingStatus === ORDER_STATUS.COMPLETE) {
+              return order.status === renderingStatus || order.status === ORDER_STATUS.ARRIVAL;
+            }
+            return order.status === renderingStatus;
+          })
           .map((order) => (
             <OrderListWidget key={order.id} order={order} {...{ renderingStatus }} />
           ))}
