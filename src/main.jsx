@@ -6,11 +6,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { App } from '@/App';
+import { Router } from '@/router';
 import { store } from '@/store/';
 import { GlobalStyle } from '@/styles/globalstyle';
 import { theme } from '@/styles/theme';
-
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -20,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <ThemeProvider {...{ theme }}>
           <GlobalStyle />
           <BrowserRouter>
-            <App />
+            <Router />
           </BrowserRouter>
         </ThemeProvider>
         <ReactQueryDevtools initialIsOpen={false} />
